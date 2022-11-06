@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import { IssueServiceService } from '../issue-service.service';
+
 @Component({
   selector: 'app-issue-create',
   templateUrl: './issue-create.component.html',
   styleUrls: ['./issue-create.component.css']
 })
-export class IssueCreateComponent implements OnInit {
+export class IssueCreateComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(public issueservice: IssueServiceService) { }
 
   onaddissue(issueform: NgForm){
     if (issueform.invalid)
@@ -19,6 +18,9 @@ export class IssueCreateComponent implements OnInit {
       return
     }
     alert(issueform.value.enteredID+':'+issueform.value.enteredName)
+
+    this.issueservice.addissue_service(issueform.value.enteredID, issueform.value.enteredName)
+    issueform.resetForm()
   }
 
 }
