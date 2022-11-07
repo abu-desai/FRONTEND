@@ -7,8 +7,8 @@ import { Subject } from 'rxjs';
 })
 export class IssueServiceService {
   
-  private issuesdisplay:{_id: string, id: string, name: string, __v: string} [] = [];
-  private updatedissuesdisplay = new Subject<{_id: string, id: string, name: string, __v: string} [] > ();
+  private issuesdisplay:{_id:string, id:string, name:string, __v:string} [] = [];
+  private updatedissuesdisplay = new Subject<{_id:string, id:string, name:string, __v:string} [] > ();
 
   constructor(private http: HttpClient) { }
 

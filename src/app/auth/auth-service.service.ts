@@ -10,13 +10,15 @@ export class AuthServiceService {
 
   constructor(private http: HttpClient) { }
 
-  signup(userusername: string, userpassword: string) {
-    this.http.post('https://localhost:3000/api/users/signup', { username: userusername, password: userpassword })
+  signup(userusername: string, userpassword: string) 
+  {
+    this.http.post('https://localhost:3000/api/users/signup', {username: userusername, password: userpassword})
       .subscribe(response => {
       });
   }
 
-  login(userusername: string, userpassword: string) {
+  login(userusername: string, userpassword: string) 
+  {
     this.http.post<{token:string}>('https://localhost:3000/api/users/login', { username: userusername, password: userpassword })
       .subscribe(response => {
         const token = response.token;

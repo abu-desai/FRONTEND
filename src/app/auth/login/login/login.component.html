@@ -5,17 +5,17 @@
     ngModel name="enteredusername" 
     placeholder ="Username" 
     required minlength="1"
-    pattern ="^[\w-\. J+@([\w-]+\.)+ [\w-] {2,4)$" 
+    pattern ="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4)$" 
     #enteredusername ="ngModel"/>
-    <div *ngIf="enteredusername.invalid && (enteredusername.dirty || enteredusername.touched)">invalid</div>
+    <div *ngIf="enteredusername.invalid && (enteredusername.dirty || enteredusername.touched)">Invalid</div>
     <br>
     <input type="password" 
     ngModel name="enteredpassword" 
     placeholder="Password" 
     required minlength="1" 
-    pattern="^([a-zA-Z0-9@*#]{8, 15})$"
+    pattern="^([a-zA-Z0-9@*#]{4,15})$"
     #enteredpassword="ngModel" />
-    <div *ngIf="enteredpassword. invalid && (enteredpassword.dirty || enteredpassword.touched)">invalid</div>
+    <div *ngIf="enteredpassword.invalid && (enteredpassword.dirty || enteredpassword.touched)">Invalid</div>
     <br>
-    <button mat-stroked-button color="accent" class="btn-block">{{option}}</button>
+<button type = "submit">{{option}}</button>
 </form>
