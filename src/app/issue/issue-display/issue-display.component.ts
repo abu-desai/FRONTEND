@@ -8,7 +8,7 @@ import { IssueServiceService } from '../issue-service.service';
   styleUrls: ['./issue-display.component.css']
 })
 export class IssueDisplayComponent implements OnInit {
-  issues: {_id: string, id: string, name: string, _v: string}[] = [];
+  issues: {_id: string, id: string, name: string, __v: string}[] = [];
 
   constructor(public issueservice: IssueServiceService) {}
 
@@ -16,7 +16,7 @@ export class IssueDisplayComponent implements OnInit {
       ngOnInit() {
         this.issueservice.getissue_service();
         this.issuesubscription = this.issueservice.getUpdateListener()
-        .subscribe((issues:{ _id: string, id:string, name: string, _v:string}[])=>
+        .subscribe((issues:{ _id: string, id:string, name: string, __v:string}[])=>
         {
           this.issues = issues;
         });
