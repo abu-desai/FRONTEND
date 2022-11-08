@@ -1,5 +1,15 @@
-<div *ngFor="let issue of issues">
+<!--<div *ngFor="let issue of issues">
     {{issue.id}}
     {{issue.name}}
     <button (click)="ondelete(issue._id)">Delete</button>
 </div>
+-->
+<mat-nav-list>
+    <mat-list-item *ngFor="let issue of issues">
+        <a matLine href="...">{{issue.id}}: 
+        {{issue.name}}</a>
+        <button mat-icon-button (click)="ondelete(issue._id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-list-item>
+</mat-nav-list>

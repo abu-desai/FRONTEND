@@ -3,7 +3,7 @@
 <hr>
 <app-issue-display></app-issue-display>
 -->
-
+<!--
 <main>
     <div>
         <h1>The Issue List</h1>
@@ -16,7 +16,76 @@
         </nav>
 
         <br>
-        <!--This is where the route gets displayed-->
+        
         <router-outlet></router-outlet>
     </div>
 </main>
+-->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/">
+                <mat-icon class="icon">list</mat-icon>
+                <span class="label">List</span>
+            </a>
+            <a mat-list-item routerLink="/login">
+                <mat-icon class="icon">input</mat-icon>
+                <span class="label">Login</span>
+            </a>
+            <a mat-list-item routerLink="/signup">
+                <mat-icon class="icon">perm_identity</mat-icon>
+                <span class="label">Signup</span>
+            </a>
+            <a mat-list-item routerLink="/add">
+                <mat-icon class="icon">add</mat-icon>
+                <span class="label">Add Issues</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <div fxHide.gt-xs>
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div>
+                <a routerLink="/">
+                    Government Issues List
+                </a>
+            </div>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+                <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+                    <li>
+                        <a routerLink="/">
+                            <mat-icon class="icon">list</mat-icon>
+                            <span class="label">List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/login">
+                            <mat-icon class="icon">input</mat-icon>
+                            <span class="label">Login</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/signup">
+                            <mat-icon class="icon">perm_identity</mat-icon>
+                            <span class="label">Signup</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/add">
+                            <mat-icon class="icon">add</mat-icon>
+                            <span class="label">Add Issues</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </mat-toolbar>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

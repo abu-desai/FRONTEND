@@ -1,21 +1,27 @@
 <!-- This is an HTML comment -->
 <!-- https: //angular. io/guide/form-validation -->
 <form (submit)="onlogin(loginform)" #loginform="ngForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
     <input type ="text"
     ngModel name="enteredusername" 
-    placeholder ="Username" 
+    matInput placeholder ="Username" 
     required minlength="1"
     pattern ="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4)$" 
     #enteredusername ="ngModel"/>
+    </mat-form-field>
     <div *ngIf="enteredusername.invalid && (enteredusername.dirty || enteredusername.touched)">Invalid</div>
     <br>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
     <input type="password" 
     ngModel name="enteredpassword" 
-    placeholder="Password" 
+    matInput placeholder="Password" 
     required minlength="1" 
     pattern="^([a-zA-Z0-9@*#]{4,15})$"
     #enteredpassword="ngModel" />
+    </mat-form-field>
     <div *ngIf="enteredpassword.invalid && (enteredpassword.dirty || enteredpassword.touched)">Invalid</div>
     <br>
-<button type = "submit">{{option}}</button>
+<button mat-raised-button color="primary" type = "submit"> Submit </button>
 </form>

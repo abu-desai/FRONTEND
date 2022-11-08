@@ -13,6 +13,10 @@ import { ErrorComponent } from './error/error/error.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorInterceptor } from './error/errorinterceptor.interceptor';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from './material.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
+import { MatButtonModule } from '@angular/material/button'
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserAnimationsModule,
     MatDialogModule,
     FlexLayoutModule,
+    MaterialModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true},
               {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}],

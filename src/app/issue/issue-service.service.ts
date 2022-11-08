@@ -29,6 +29,7 @@ getissue_service() {
     this.updatedissuesdisplay.next([...this.issuesdisplay]);
   })
 }
+
 deleteissue_service(issueid: string)
 {
   this.http.delete('https://localhost:3000/api/issues/' + issueid)

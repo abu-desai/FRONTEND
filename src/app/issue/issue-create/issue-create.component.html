@@ -1,15 +1,27 @@
 <!--This is an HTML comment -->
 <form (submit)="onaddissue(addIssue)" #addIssue="ngForm">
+<mat-form-field appearance="outline">
+    <mat-label>Issue ID</mat-label>
 <input type ="text" 
 ngModel name="enteredID" 
-placeholder ="Issue ID" 
+matInput placeholder ="Issue ID" 
 required minlength="1"
 pattern ="^[a-zA-Z0-9\s_-]+$" 
-#enteredID ="ngModel"/> 
+#enteredID ="ngModel"/>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+    <mat-label>Issue Name</mat-label>
 <input type ="text" 
 ngModel name= "enteredName" 
-placeholder ="Issue Name" 
+matInput placeholder ="Issue Name" 
 required minlength="1"
 pattern ="^[a-zA-Z0-9\s_-]+$" 
 #enteredName ="ngModel"/>
-<button type = "submit"> Add Issue </button> </form>
+</mat-form-field>
+
+<button mat-icon-button type = "submit">
+    <mat-icon>add</mat-icon>
+</button> 
+
+</form>
