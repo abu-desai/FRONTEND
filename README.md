@@ -1,6 +1,7 @@
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+This is a project for a MEAN (Mongo, Express, Angular, node.js) application assignment
 
 ## Development server
 
